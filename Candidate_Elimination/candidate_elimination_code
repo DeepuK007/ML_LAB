@@ -2,13 +2,13 @@ import numpy as np
 import pandas as pd
 
 data= pd.read_csv("data.csv")
-data
+print(data)
 
 concepts=np.array(data.iloc[:,0:-1])
-concepts
+print(concepts)
 
 target=np.array(data.iloc[:,-1])
-target
+print(target)
 
 def learn(concepts, target):
     specific_h=concepts[0].copy()
@@ -35,11 +35,11 @@ def learn(concepts, target):
     for i in indices:
         general_h.remove(['?','?','?','?','?','?'])
     print()
-    
+
     print(general_h)
     return specific_h, general_h
-    
-    s_final, f_final = learn(concepts,target)
-    
-    s_final
-    f_final
+
+s_final, f_final = learn(concepts,target)
+
+print(s_final)
+print(f_final)
